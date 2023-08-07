@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: upetck-app-deployment
+spec:
+  replicas: 3   
+  selector:
+    matchLabels:
+      app: upetck-app
+  template:
+    metadata:
+      labels:
+        app: upetck-app
+    spec:
+      containers:
+        - name: upetck-app
+          image: raykadri/upteck_crud_springboot-app:latest  
+          ports:
+           - containerPort:  8080 
