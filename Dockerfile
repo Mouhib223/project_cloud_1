@@ -14,7 +14,7 @@ RUN --mount=type=cache,target=/root/.m2 mvn dependency:go-offline -B
 COPY src ./src
 
 # Build the application
-RUN mvn package -DskipTests
+RUN mvn package 
 
 # Stage 2: Create a minimal image to run the application
 FROM adoptopenjdk:11-jre-hotspot
