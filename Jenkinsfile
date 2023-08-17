@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        JAVA_HOME = tool 'JDK11' 
+        
           
         DOCKER_IMAGE_NAME = "raykadri/upteck_crud_springboot-app:v1"
     
