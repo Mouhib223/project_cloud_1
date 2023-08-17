@@ -87,5 +87,15 @@ pipeline {
         always {
             deleteDir() // Delete workspace to clean up
         }
+        success {
+            emailext subject: 'Build Success',
+                     body: 'The build was successful. Congratulations!',
+                     recipientProviders: [[$class: 'DevelopersRecipientProvider']]
+        }
+        failure {
+            emailext subject: 'Build Failure',
+                     body: 'The build failed. Please check the logs for details.',
+                     recipientProviders: [[$class: 'DevelopersRecipientProvider']]
+        }
     }
 }
