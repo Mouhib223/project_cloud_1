@@ -22,7 +22,6 @@ pipeline {
                   // Use the Maven tool directly
                 withMaven(
                     maven: 'Maven', 
-                    mavenSettingsConfig: 'my-maven-settings' 
                 ) {
                     // Run Maven goals directly
                     sh 'mvn clean install'
