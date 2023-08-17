@@ -69,7 +69,7 @@ pipeline {
             steps {
               script {
                 withKubeConfig([credentialsId: 'K8S', serverUrl: '']) {
-                sh ('kubectl apply -f .\upteck-back-deployment.yaml')
+                sh ('kubectl apply -f upteck-back-deployment.yaml')
                 }}
             
 
