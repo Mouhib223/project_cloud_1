@@ -19,7 +19,7 @@ pipeline {
         stage('Build') {
             steps {
                 script {
-                    def mvnHome = tool name: 'Maven', type: 'hudson.tasks.Maven$MavenInstallation'
+                    def mvnHome = tool name: 'maven-3.9.4', type: 'hudson.tasks.Maven$MavenInstallation'
                     def mavenHome = mvnHome?.home
                     def maven = "${mavenHome}/bin/mvn"
 
