@@ -19,11 +19,16 @@ pipeline {
         stage('Build') {
             steps {
                 script {
-                    def mvnHome = tool name: 'maven-3.9.4', type: 'hudson.tasks.Maven$MavenInstallation'
-                    def mavenHome = mvnHome?.home
-                    def maven = "${mavenHome}/bin/mvn"
+                  // Use the Maven tool directly
+                withMaven(
+                    maven: 'Maven', 
+                    mavenSettingsConfig: 'my-maven-settings' 
+                ) {
+                    // Run Maven goals directly
+                    sh 'mvn clean install'
+                }
 
-                    sh "${maven} clean install"
+                   
                 }
             }
         }
