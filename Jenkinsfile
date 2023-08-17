@@ -90,12 +90,12 @@ pipeline {
         success {
             emailext subject: 'Build Success',
                      body: 'The build was successful. Congratulations!',
-                     recipientProviders: [[$class: 'DevelopersRecipientProvider']]
+                     to: 'your_email@example.com' // Specify the recipient's email address here
         }
         failure {
             emailext subject: 'Build Failure',
                      body: 'The build failed. Please check the logs for details.',
-                     recipientProviders: [[$class: 'DevelopersRecipientProvider']]
+                     to: 'your_email@example.com' // Specify the recipient's email address here
         }
     }
 }
