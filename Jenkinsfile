@@ -35,13 +35,15 @@ pipeline {
         stage('Run Tests') {
             steps {
                 script {
-                    def mvnHome = tool name: 'Maven', type: 'hudson.tasks.Maven$MavenInstallation'
-                    def mavenHome = mvnHome?.home
-                    def maven = "${mavenHome}/bin/mvn"
-
-               
-                    sh "${maven} test"
+                  // Use the Maven tool directly
+                withMaven(
+                    maven: 'Maven', 
+                ) {
+                    // Run Maven goals directly
+                    sh 'mvn test'
                 }
+
+                   
             }
         }
          
