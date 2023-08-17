@@ -90,12 +90,12 @@ pipeline {
         success {
             emailext subject: 'Build Success',
                      body: 'The build was successful. Congratulations!',
-                     to: 'rayenekadri15@gmail.com' // Specify the recipient's email address here
+                     to: 'rayenkadri2022@gmail.com' // Specify the recipient's email address here
         }
         failure {
             emailext subject: 'Build Failure',
                      body: 'The build failed. Please check the logs for details.',
-                     to: 'rayenekadri15@gmail.com' // Specify the recipient's email address here
+                     to: 'rayenkadri2022@gmail.com' // Specify the recipient's email address here
         }
     }
 }
